@@ -4,8 +4,18 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
+
+app.use(cors({
+  origin: 'https://fog-battlefield-frontend.vercel.app', 
+  // Allow requests from your React app's origin
+}));
+
+axios.defaults.baseURL = "https://";
+    axios.defaults.headers.post["Content-Type"] =
+      "application/json;charset=utf-8";
+    axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
 // Previous data structure for basic settings
 const basicSettings = {
@@ -120,6 +130,6 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-app.get("/",(req,res)=>{
-  res.send("Welcome to backend")
+app.get("/", (req, res) => {
+  res.send("Welcome to backend");
 });
