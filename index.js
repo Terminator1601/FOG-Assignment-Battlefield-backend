@@ -138,6 +138,8 @@
 
 
 
+
+
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -222,7 +224,6 @@ const advancedSettings = {
       label: "Minimap Spotting",
       value: "on",
     },
-
     {
       label: "HUD",
       value: "ON",
