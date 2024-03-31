@@ -135,6 +135,9 @@
 //   res.send("Welcome to backend");
 // });
 
+
+
+
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -150,8 +153,8 @@ app.use(
 );
 
 axios.defaults.baseURL = "https://";
-axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
-axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
+axios.defaults.headers.common["Content-Type"] = "application/json;charset=utf-8";
+axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
 
 // Cache for storing responses
 const cache = {};
@@ -207,7 +210,6 @@ const advancedSettings = {
       label: "Minimap Spotting",
       value: "on",
     },
-
     {
       label: "HUD",
       value: "ON",
